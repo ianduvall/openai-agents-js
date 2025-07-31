@@ -1,0 +1,17 @@
+{
+  "private": true,
+  "name": "zod-bugs-repro",
+  "description": "Reproduction scripts for zod compatibility issues",
+  "scripts": {
+    "typecheck": "tsc --noEmit --skipLibCheck",
+    "install-working-version": "pnpm up --no-save --no-lockfile zod@3.25.67",
+    "install-failing-version": "pnpm up --no-save --no-lockfile zod@3.25.68",
+    "test:working-version": "pnpm install-working-version && pnpm typecheck && pnpm i > /dev/null",
+    "test:failing-version": "pnpm install-failing-version && pnpm typecheck || true && pnpm i > /dev/null"
+  },
+  "devDependencies": {
+    "@openai/agents": "workspace:*",
+    "typescript": "^5.8.3",
+    "zod": "^3.25.40"
+  }
+}

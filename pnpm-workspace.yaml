@@ -2,6 +2,7 @@ packages:
   - packages/*
   - examples/*
   - docs
+  - zod-bugs-repro
 
 onlyBuiltDependencies:
   - '@tailwindcss/oxide'
